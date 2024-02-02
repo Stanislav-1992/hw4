@@ -58,8 +58,9 @@ public class Main {
         int seatPlace = 60;
         int standPlace = passengersPlace - seatPlace;
         int passengers = 90;
-        int busySeatPlace = 30;  // 30 занятых сидячих
-        int busyStandPlace = passengers - busySeatPlace; //60 занятых стоячих
+        int busySeatPlace = 45;  // 30 занятых сидячих
+        int busyStandPlace = passengers - busySeatPlace;
+        System.out.println(busyStandPlace);//60 занятых стоячих
         int freeSeatPlace = seatPlace - busySeatPlace;  // 30 free
         System.out.println(freeSeatPlace);
         int freeStandPlace = standPlace - busyStandPlace; //0 free
@@ -70,9 +71,9 @@ public class Main {
                 System.out.println("В вагоне есть свободные места");
             }
         } else if (freeStandPlace > 0) {
-            System.out.println("В вагоне есть свободные стоячие места");
-        } else if (freeSeatPlace > 0 ) {
-            System.out.println("В вагоне есть свободные сидячие места");
+            System.out.println("В вагоне есть " + freeStandPlace + " стоячих свободных мест");
+        } if (freeSeatPlace > 0 ) {
+            System.out.println("В вагоне есть " + freeSeatPlace + " сидячих свободных мест");
         }
 
 
