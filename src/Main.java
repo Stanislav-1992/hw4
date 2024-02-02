@@ -68,13 +68,13 @@ public class Main {
             System.out.println("Вагон польностью забит");
             if (passengersPlace > passengers) {
                 System.out.println("В вагоне есть свободные места");
-            } else if (passengers < standPlace) {
-                System.out.println("В вагоне есть свободные стоячие места");
             }
-            if (passengers < seatPlace) {
-                System.out.println("В вагоне есть свободные сидячие места");
-            }
+        } else if (freeStandPlace > 0) {
+            System.out.println("В вагоне есть свободные стоячие места");
+        } else if (freeSeatPlace > 0 ) {
+            System.out.println("В вагоне есть свободные сидячие места");
         }
+
 
         // Задача 7
         System.out.println("Задача 7");
