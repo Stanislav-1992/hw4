@@ -3,51 +3,29 @@ public class Main {
     public static void main(String[] args) {
         // Задача 1
         System.out.println("Задача 1");
-        int age = 18;
-        int ageOne = 14;
-        if (age >= 18) {
+        int age = 20;
+        if (age >= 18)
             System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний");
-        } else {
-            System.out.println("Если возраст человека равен " + age + ", то нужно немного подождать");
-        }
-        if (ageOne <= 18) {
-            System.out.println("Если возраст человека равен " + ageOne + ", то нужно немного подождать");
-        } else {
-            System.out.println("Если возраст человека равен " + ageOne + ", то он совершеннолетний");
+        else {
+            System.out.println("Если возраст человека равен " + age + ", то он не достиг совершеннолетия, нужно немного подождать");
         }
 
         //Задача 2
         System.out.println("Задача 2");
-        int temperaturePlus = 7;
-        int temperatureMinus = -1;
-
-        if (temperaturePlus < 5) {
-            System.out.println("На улице " + temperaturePlus + " градусов, нужно надеть шапку");
+        int temperature = 6;
+        if (temperature < 5) {
+            System.out.println("На улице " + temperature + " градусов, нужно надеть шапку");
         } else {
-            System.out.println("На улице " + temperaturePlus + " градусов, можно идти без шапки");
-        }
-
-        if (temperatureMinus > 5) {
-            System.out.println("На улице " + temperatureMinus + " градусов, можно идти без шапки");
-        } else {
-            System.out.println("На улице " + temperatureMinus + " градус, нужно надеть шапку");
+            System.out.println("На улице " + temperature + " градусов, можно идти без шапки");
         }
 
         // Задача 3
         System.out.println("Задача 3");
-        int speedOne = 75;
-        int speedTwo = 30;
-
-        if (speedOne >= 60) {
-            System.out.println("Если скорость " + speedOne + ", то придется заплатить штраф");
+        int speed = 50;
+        if (speed >= 60) {
+            System.out.println("Если скорость " + speed + ", то придется заплатить штраф");
         } else {
-            System.out.println("Если скорость " + speedOne + ", то можно ездить спокойно");
-        }
-
-        if (speedTwo < 60) {
-            System.out.println("Если скорость " + speedTwo + ", то можно ездить спокойно");
-        } else {
-            System.out.println("Если скорость " + speedTwo + ", то придется заплатить штраф");
+            System.out.println("Если скорость " + speed + ", то можно ездить спокойно");
         }
 
         // Задача 4
@@ -79,15 +57,23 @@ public class Main {
         int passengersPlace = 120;
         int seatPlace = 60;
         int standPlace = passengersPlace - seatPlace;
-        int passengers = 20;
+        int passengers = 90;
+        int busySeatPlace = 30;  // 30 занятых сидячих
+        int busyStandPlace = passengers - busySeatPlace; //60 занятых стоячих
+        int freeSeatPlace = seatPlace - busySeatPlace;  // 30 free
+        System.out.println(freeSeatPlace);
+        int freeStandPlace = standPlace - busyStandPlace; //0 free
+        System.out.println(freeStandPlace);
         if (passengers == passengersPlace) {
             System.out.println("Вагон польностью забит");
-        } if (passengersPlace > passengers) {
-            System.out.println("В вагоне есть свободные места");
-        } if (passengers < standPlace) {
-            System.out.println("В вагоне есть свободные стоячие места");
-        } if (passengers < seatPlace) {
-            System.out.println("В вагоне есть свободные сидячие места");
+            if (passengersPlace > passengers) {
+                System.out.println("В вагоне есть свободные места");
+            } else if (passengers < standPlace) {
+                System.out.println("В вагоне есть свободные стоячие места");
+            }
+            if (passengers < seatPlace) {
+                System.out.println("В вагоне есть свободные сидячие места");
+            }
         }
 
         // Задача 7
@@ -95,11 +81,11 @@ public class Main {
         int one = 1;
         int two = 2;
         int three = 3;
-        if (one > two && one > three) {
+        if (one >= two && one >= three) {
             System.out.println("Самое большое число " + one);
-        } else if (two > one && two > three) {
+        } else if (two >= one && two >= three) {
             System.out.println("Самое большое число " + two);
-        } else if (three > one && three > two) {
+        } else {
             System.out.println("Самое большое число " + three);
         }
 
